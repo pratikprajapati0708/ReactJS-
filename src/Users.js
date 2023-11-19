@@ -1,7 +1,9 @@
-import React from 'react'
+import React,{forwardRef} from 'react'
 
-export default function() {
+export default function Users(props,ref) {
   return (
-    <div>Hello User!</div>
+    <div>
+      <input type='text'ref={ref}></input>
+    </div>
   )
 }

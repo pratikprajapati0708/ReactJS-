@@ -1,14 +1,22 @@
 import './App.css';
+import React from 'react'
 import ConditionalRendering from './ConditionalRendering';
 import Form from './Form';
 import Functionasprops from './Functionasprops';
 import Login from './Login';
 import Student from './Student';
-import Users from './Users';
 import { useState } from 'react';
 import NewStyle from './NewStyle';
 import ReactBootstrap from './ReactBootstrap';
-
+import ArrayMap from './ArrayMap';
+import NestedArraymap from './NestedArraymap';
+import ReactFragment from './ReactFragment';
+import LiftingStateUp from './LiftingStateUp';
+import ComUseReff from './ComUseReff';
+import Users from './Users';
+import ControlledComponent from './ControlledComponent';
+import UncontrolledComponent from './UncontrolledComponent'; 
+import HighOrderComponent from './HighOrderComponent';
 function App() {
   const [data, updateData] = useState("Welcome to React");
   const [count, setCount] = useState(0);
@@ -28,6 +36,9 @@ function App() {
   const [toggle, settoggle] = useState(false);
   function testingalert(){
     alert("Hello from React");
+  }
+  function parentalert(data){
+    alert(data.name);
   }
   return (
     <div className="App">
@@ -64,6 +75,14 @@ function App() {
       <Functionasprops data={testingalert}/>
       <NewStyle/>
       <ReactBootstrap/>
+      <ArrayMap/>
+      <NestedArraymap/>
+      <useMemoHook/>
+      <LiftingStateUp alert={parentalert}/>
+      <ComUseReff/>
+      <ControlledComponent/>
+      <UncontrolledComponent/>
+      <HighOrderComponent/>
     </div>
   );
 }
