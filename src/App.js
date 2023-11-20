@@ -17,9 +17,12 @@ import Users from './Users';
 import ControlledComponent from './ControlledComponent';
 import UncontrolledComponent from './UncontrolledComponent';
 import HighOrderComponent from './HighOrderComponent';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, NavigationType, Route, Routes } from 'react-router-dom';
 import Home from './ReactRouter/Home';
 import About from './ReactRouter/About';
+import Navbar from './ReactRouter/Navbar';
+import Page404 from './ReactRouter/Page404';
+
 function App() {
   const [data, updateData] = useState("Welcome to React");
   const [count, setCount] = useState(0);
@@ -87,9 +90,12 @@ function App() {
       <UncontrolledComponent />
       <HighOrderComponent />
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* <Route path='/*' element={<Page404/>}></Route> */}
+          <Route path='/*' element={<Navigate to='/'/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
