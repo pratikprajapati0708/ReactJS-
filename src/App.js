@@ -15,8 +15,11 @@ import LiftingStateUp from './LiftingStateUp';
 import ComUseReff from './ComUseReff';
 import Users from './Users';
 import ControlledComponent from './ControlledComponent';
-import UncontrolledComponent from './UncontrolledComponent'; 
+import UncontrolledComponent from './UncontrolledComponent';
 import HighOrderComponent from './HighOrderComponent';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './ReactRouter/Home';
+import About from './ReactRouter/About';
 function App() {
   const [data, updateData] = useState("Welcome to React");
   const [count, setCount] = useState(0);
@@ -34,10 +37,10 @@ function App() {
   const [print, setprint] = useState(false);
   const [studentdata, updateStudentdata] = useState("Pratik");
   const [toggle, settoggle] = useState(false);
-  function testingalert(){
+  function testingalert() {
     alert("Hello from React");
   }
-  function parentalert(data){
+  function parentalert(data) {
     alert(data.name);
   }
   return (
@@ -71,18 +74,24 @@ function App() {
 
       <Form />
       <ConditionalRendering />
-      <Login/>
-      <Functionasprops data={testingalert}/>
-      <NewStyle/>
-      <ReactBootstrap/>
-      <ArrayMap/>
-      <NestedArraymap/>
-      <useMemoHook/>
-      <LiftingStateUp alert={parentalert}/>
-      <ComUseReff/>
-      <ControlledComponent/>
-      <UncontrolledComponent/>
-      <HighOrderComponent/>
+      <Login />
+      <Functionasprops data={testingalert} />
+      <NewStyle />
+      <ReactBootstrap />
+      <ArrayMap />
+      <NestedArraymap />
+      <useMemoHook />
+      <LiftingStateUp alert={parentalert} />
+      <ComUseReff />
+      <ControlledComponent />
+      <UncontrolledComponent />
+      <HighOrderComponent />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
