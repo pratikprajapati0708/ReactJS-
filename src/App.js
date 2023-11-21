@@ -22,6 +22,7 @@ import Home from './ReactRouter/Home';
 import About from './ReactRouter/About';
 import Navbar from './ReactRouter/Navbar';
 import Page404 from './ReactRouter/Page404';
+import RouteParams from './ReactRouter/RouteParams';
 
 function App() {
   const [data, updateData] = useState("Welcome to React");
@@ -96,6 +97,7 @@ function App() {
           <Route path="/about" element={<About />} />
           {/* <Route path='/*' element={<Page404/>}></Route> */}
           <Route path='/*' element={<Navigate to='/'/>}></Route>
+          <Route path='/users/:name' element={<RouteParams/>}/>
         </Routes>
       </BrowserRouter>
     </div>
