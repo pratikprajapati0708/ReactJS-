@@ -12,3 +12,5 @@ function RouteParams() {
 }
 
 export default RouteParams
+
+//dynamic routing
