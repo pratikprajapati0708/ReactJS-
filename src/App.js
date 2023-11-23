@@ -26,6 +26,8 @@ import RouteParams from './ReactRouter/RouteParams';
 import Filter from './ReactRouter/Filter';
 import Contact from './ReactRouter/Contact';
 import Channel from './ReactRouter/Channel';
+import LoginUser from './ReactRouter/Login';
+import Protected from './ReactRouter/Protected';
 
 function App() {
   const [data, updateData] = useState("Welcome to React");
@@ -96,7 +98,8 @@ function App() {
       <BrowserRouter>
       <Navbar/>
         <Routes>
-          <Route path="/" state={{name:'Pratik'}} element={<Home />} />
+          <Route path='/login' element={<LoginUser/>}/>
+          <Route path="/" state={{name:'Pratik'}} element={<Protected Component ={Home}/>} />
           <Route path="/about" element={<About />} />
           {/* <Route path='/*' element={<Page404/>}></Route> */}
           <Route path='/*' element={<Navigate to='/'/>}></Route>
