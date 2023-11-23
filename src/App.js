@@ -24,6 +24,8 @@ import Navbar from './ReactRouter/Navbar';
 import Page404 from './ReactRouter/Page404';
 import RouteParams from './ReactRouter/RouteParams';
 import Filter from './ReactRouter/Filter';
+import Contact from './ReactRouter/Contact';
+import Channel from './ReactRouter/Channel';
 
 function App() {
   const [data, updateData] = useState("Welcome to React");
@@ -99,6 +101,8 @@ function App() {
           {/* <Route path='/*' element={<Page404/>}></Route> */}
           <Route path='/*' element={<Navigate to='/'/>}></Route>
           <Route path='/users/:name' element={<RouteParams/>}/>
+          <Route path='/contact/' element={<Contact/>}/>
+            <Route path='channel' element={<Channel/>}/>
         </Routes>
         <Filter/>
       </BrowserRouter>
