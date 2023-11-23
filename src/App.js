@@ -28,6 +28,7 @@ import Contact from './ReactRouter/Contact';
 import Channel from './ReactRouter/Channel';
 import LoginUser from './ReactRouter/Login';
 import Protected from './ReactRouter/Protected';
+import FetchAPI from './FetchAPI';
 
 function App() {
   const [data, updateData] = useState("Welcome to React");
@@ -95,6 +96,7 @@ function App() {
       <ControlledComponent />
       <UncontrolledComponent />
       <HighOrderComponent />
+      <FetchAPI/>
       <BrowserRouter>
       <Navbar/>
         <Routes>
